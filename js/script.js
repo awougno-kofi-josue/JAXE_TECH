@@ -10,16 +10,15 @@ menuToggle.addEventListener("click", () => {
 const button = document.getElementById('button');
 
 button.addEventListener('click', function(event) {
-    event.preventDefault(); // Empêche le rechargement de la page
+    event.preventDefault(); 
 
-    // Récupération des valeurs des champs
-    const name = document.getElementById('nom').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
+    const name = document.getElementById('nom').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
 
-    // Validation simple
-    if (name === '') {
-        alert('Veuillez entrer votre nom.');
+    
+    if (name === ''||name.length<3 ) {
+        alert('Veuillez entrer votre nom d\'au moins 3 caratères.');
         return;
     }
 
@@ -28,8 +27,8 @@ button.addEventListener('click', function(event) {
         return;
     }
 
-    if (message === '') {
-        alert('Veuillez entrer un message.');
+    if (message === '' || message.length<5) {
+        alert('Veuillez écrire un vrai message.');
         return;
     }
 
@@ -38,7 +37,6 @@ button.addEventListener('click', function(event) {
         `Simulation d'envoi réussie !\n\nNom : ${name}\nEmail : ${email}\nMessage : ${message}`
     );
 
-    // Vider le formulaire après la simulation
     document.getElementById('nom').value = "";
     document.getElementById('email').value = "";
     document.getElementById('message').value = "";
