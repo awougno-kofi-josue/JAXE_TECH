@@ -50,6 +50,7 @@ body {
 
 .lien-interne ul li a:hover {
   color: #38bdf8;
+  border-top: 2px solid #38bdf8;
 }
 
 /* Bouton menu (burger) */
